@@ -18,6 +18,7 @@ class TallyApp extends LitElement {
 
   subtractHandler() {
     this.count -= STEP_AMOUNT;
+    console.log("Current count:", this.count);
     this.requestUpdate();
     if (this.count === MIN_NUMBER) {
       console.log("Limit reached");
@@ -29,6 +30,7 @@ class TallyApp extends LitElement {
 
   addHandler() {
     this.count += STEP_AMOUNT;
+    console.log("Current count:", this.count);
     this.requestUpdate();
     if (this.count === MAX_NUMBER) {
       console.log("Limit reached");
@@ -40,7 +42,9 @@ class TallyApp extends LitElement {
 
   resetHandler() {
     this.count = 0;
+    console.log("Current count:", this.count);
     this.requestUpdate();
+    console.log ("Counter has been reset.")
     setTimeout(() => {
       this.showSnackbar('Counter has been reset.');
     });
